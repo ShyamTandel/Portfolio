@@ -3,40 +3,57 @@ import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center hero-bg overflow-hidden pt-20">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center hero-bg overflow-hidden pt-20"
+      data-parallax-root
+    >
       <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none"
+        data-parallax="10"
         style={{
           backgroundImage:
             "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-glow-pulse pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/20 blur-3xl animate-glow-pulse pointer-events-none" />
+      <div
+        className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl animate-glow-pulse pointer-events-none"
+        data-parallax="34"
+      />
+      <div
+        className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/20 blur-3xl animate-glow-pulse pointer-events-none"
+        data-parallax="28"
+      />
+      <div
+        className="absolute inset-x-0 top-24 mx-auto h-64 w-[34rem] rounded-full bg-primary/10 blur-[120px] pointer-events-none"
+        data-parallax="18"
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-mono">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-mono"
+            data-parallax="10"
+          >
             <span className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
             Available for new opportunities
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight" data-parallax="18">
             Hi, I&apos;m <span className="gradient-text">Shyam Tandel</span>
           </h1>
 
-          <p className="text-xl md:text-2xl font-medium text-muted-foreground">
-            Python Backend Developer {" "}
-            <span className="text-primary">·</span> AWS Certified AI Practitioner 
+          <p className="text-xl md:text-2xl font-medium text-muted-foreground" data-parallax="12">
+            Python Backend Developer <span className="text-primary">·</span> AWS Certified AI Practitioner
           </p>
 
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-parallax="8">
             Building scalable backend systems and exploring AI-powered solutions. Crafting REST APIs, automating
             workflows, and shipping production-ready cloud apps.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4" data-parallax="16">
             <Button
               size="lg"
               asChild
@@ -58,12 +75,15 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-6 pt-6">
+          <div className="flex items-center justify-center gap-6 pt-6" data-parallax="14">
             <a
               href="https://github.com/ShyamTandel"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110"
+              data-cursor="Click"
+              data-magnetic
+              data-magnetic-strength="0.18"
               aria-label="GitHub"
             >
               <Github className="h-6 w-6" />
@@ -73,6 +93,9 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110"
+              data-cursor="Click"
+              data-magnetic
+              data-magnetic-strength="0.18"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
@@ -80,6 +103,9 @@ const Hero = () => {
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=shyamtandel.dev@gmail.com"
               className="text-muted-foreground hover:text-primary transition-smooth hover:scale-110"
+              data-cursor="Click"
+              data-magnetic
+              data-magnetic-strength="0.18"
               aria-label="Email"
             >
               <Mail className="h-6 w-6" />
