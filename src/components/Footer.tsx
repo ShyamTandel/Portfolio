@@ -1,11 +1,18 @@
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border/60 py-8">
-      <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground font-mono">© {year} Shyam Tandel · Built with React + Tailwind</p>
+      <ScrollReveal
+        className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.05 }}
+      >
+        <p className="text-sm text-muted-foreground font-mono">&copy; {year} Shyam Tandel &middot; Built with React + Tailwind</p>
         <div className="flex items-center gap-4">
           <a
             href="https://github.com/ShyamTandel"
@@ -33,7 +40,7 @@ const Footer = () => {
             <Mail className="h-5 w-5" />
           </a>
         </div>
-      </div>
+      </ScrollReveal>
     </footer>
   );
 };

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ScrollReveal, ScrollRevealGroup } from "@/components/ui/scroll-reveal";
 import { ArrowRight, Download, Mail, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
@@ -31,29 +32,35 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          <div
+        <ScrollRevealGroup className="max-w-4xl mx-auto text-center space-y-8" amount={0.15}>
+          <ScrollReveal
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/50 backdrop-blur-sm text-sm font-mono"
             data-parallax="10"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
             Available for new opportunities
-          </div>
+          </ScrollReveal>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight" data-parallax="18">
-            Hi, I&apos;m <span className="gradient-text">Shyam Tandel</span>
-          </h1>
+          <ScrollReveal data-parallax="18">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight">
+              Hi, I&apos;m <span className="gradient-text">Shyam Tandel</span>
+            </h1>
+          </ScrollReveal>
 
-          <p className="text-xl md:text-2xl font-medium text-muted-foreground" data-parallax="12">
-            Python Backend Developer <span className="text-primary">&middot;</span> AWS Certified AI Practitioner
-          </p>
+          <ScrollReveal data-parallax="12">
+            <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+              Python Backend Developer <span className="text-primary">&middot;</span> AWS Certified AI Practitioner
+            </p>
+          </ScrollReveal>
 
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-parallax="8">
-            Building scalable backend systems and exploring AI-powered solutions. Crafting REST APIs, automating
-            workflows, and shipping production-ready cloud apps.
-          </p>
+          <ScrollReveal className="max-w-2xl mx-auto" data-parallax="8">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              Building scalable backend systems and exploring AI-powered solutions. Crafting REST APIs, automating
+              workflows, and shipping production-ready cloud apps.
+            </p>
+          </ScrollReveal>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4" data-parallax="16">
+          <ScrollReveal className="flex flex-wrap items-center justify-center gap-4 pt-4" data-parallax="16">
             <Button
               size="lg"
               asChild
@@ -73,9 +80,9 @@ const Hero = () => {
                 <Download className="mr-2 h-4 w-4" /> Resume
               </a>
             </Button>
-          </div>
+          </ScrollReveal>
 
-          <div className="flex items-center justify-center gap-6 pt-6" data-parallax="14">
+          <ScrollReveal className="flex items-center justify-center gap-6 pt-6" data-parallax="14">
             <a
               href="https://github.com/ShyamTandel"
               target="_blank"
@@ -110,8 +117,8 @@ const Hero = () => {
             >
               <Mail className="h-6 w-6" />
             </a>
-          </div>
-        </div>
+          </ScrollReveal>
+        </ScrollRevealGroup>
       </div>
     </section>
   );
