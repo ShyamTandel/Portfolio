@@ -84,7 +84,7 @@ const Projects = () => {
                     <ul className="space-y-1.5">
                       {project.features.map((feature) => (
                         <li key={feature} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-1">▸</span>
+                          <span className="text-primary mt-1">&rsaquo;</span>
                           {feature}
                         </li>
                       ))}

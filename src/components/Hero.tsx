@@ -45,7 +45,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-xl md:text-2xl font-medium text-muted-foreground" data-parallax="12">
-            Python Backend Developer <span className="text-primary">·</span> AWS Certified AI Practitioner
+            Python Backend Developer <span className="text-primary">&middot;</span> AWS Certified AI Practitioner
           </p>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed" data-parallax="8">
