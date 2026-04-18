@@ -2,8 +2,6 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, TrendingUp } from "lucide-react";
 
-import deltaPreview from "@/assets/delta-preview.svg";
-
 const projects = [
   {
     title: "DeltaStrategy",
@@ -20,7 +18,6 @@ const projects = [
     stack: ["Django", "DRF", "MySQL", "Celery", "Redis", "Docker", "GitHub Actions", "AWS EC2", "Delta Exchange API"],
     github: "https://github.com/ShyamTandel/DeltaStrategy",
     featured: true,
-    preview: deltaPreview,
   },
 ];
 
@@ -44,7 +41,6 @@ const Projects = () => {
                 key={project.title}
                 className="project-card card-gradient overflow-hidden border-border/60 hover:border-primary/50 hover:shadow-elegant transition-smooth group"
                 data-cursor="View"
-                data-cursor-preview={project.preview}
                 data-magnetic-strength="0.08"
                 data-project-card
               >

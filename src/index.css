@@ -154,63 +154,7 @@
   inset: 0;
   z-index: 120;
   pointer-events: none;
-  mix-blend-mode: normal;
   will-change: opacity;
-}
-
-.cursor-liquid-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.66;
-  mix-blend-mode: screen;
-}
-
-.cursor-light {
-  position: absolute;
-  width: 16rem;
-  height: 16rem;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, hsl(var(--accent) / 0.12) 32%, transparent 72%);
-  filter: blur(28px);
-  opacity: 0.24;
-  will-change: transform, opacity;
-}
-
-.cursor-preview {
-  position: absolute;
-  width: min(18rem, 28vw);
-  aspect-ratio: 4 / 3;
-  padding: 0.5rem;
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, hsl(var(--background) / 0.84), hsl(var(--background) / 0.35));
-  border: 1px solid hsl(var(--border) / 0.5);
-  box-shadow: 0 28px 90px -32px hsl(var(--foreground) / 0.55);
-  backdrop-filter: blur(22px);
-  overflow: hidden;
-  transform-origin: center;
-  will-change: transform, opacity, filter;
-}
-
-.cursor-preview::after {
-  content: "";
-  position: absolute;
-  inset: auto 1rem 1rem auto;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 999px;
-  background: radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, transparent 72%);
-  filter: blur(14px);
-}
-
-.cursor-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1.1rem;
-  display: block;
 }
 
 .cursor-aura,
@@ -252,7 +196,6 @@
 }
 
 .cursor-trail-dot,
-.cursor-image-trail,
 .cursor-click-ripple {
   position: absolute;
   top: 0;
@@ -264,17 +207,6 @@
 .cursor-trail-dot {
   background: radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, hsl(var(--accent) / 0.08) 58%, transparent 72%);
   border: 1px solid hsl(var(--foreground) / 0.08);
-}
-
-.cursor-image-trail {
-  width: clamp(4rem, 7vw, 6.5rem);
-  aspect-ratio: 4 / 3;
-  border-radius: 1rem;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid hsl(var(--border) / 0.4);
-  box-shadow: 0 18px 48px -24px hsl(var(--foreground) / 0.6);
-  overflow: hidden;
 }
 
 .cursor-click-ripple {
