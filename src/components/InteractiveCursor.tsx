@@ -115,9 +115,13 @@ const InteractiveCursor = () => {
     };
 
     const spawnImageTrail = (x: number, y: number) => {
+      if (!activePreview) {
+        return;
+      }
+
       const imageTrail = document.createElement("span");
       imageTrail.className = "cursor-image-trail";
-      imageTrail.style.backgroundImage = `url(${activePreview || defaultPreview})`;
+      imageTrail.style.backgroundImage = `url(${activePreview})`;
       root.appendChild(imageTrail);
 
       gsap.set(imageTrail, {
@@ -218,8 +222,9 @@ const InteractiveCursor = () => {
         ease: "power2.out",
       });
 
-      if (nextPreview && activePreview !== nextPreview) {
-        activePreview = nextPreview;
+      activePreview = nextPreview;
+
+      if (nextPreview) {
         previewImage.src = nextPreview;
       }
 
@@ -438,6 +443,12 @@ const InteractiveCursor = () => {
       });
     };
 
+    const handleMouseOut = (event: MouseEvent) => {
+      if (!(event.relatedTarget instanceof Node)) {
+        handlePointerLeaveViewport();
+      }
+    };
+
     const tick = (time: number) => {
       const delta = time - lastFrameTime;
       lastFrameTime = time;
@@ -483,16 +494,13 @@ const InteractiveCursor = () => {
     window.addEventListener("resize", setCanvasSize);
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerdown", handlePointerDown, { passive: true });
-    window.addEventListener("mouseout", (event) => {
-      if (!(event.relatedTarget instanceof Node)) {
-        handlePointerLeaveViewport();
-      }
-    });
+    window.addEventListener("mouseout", handleMouseOut);
     window.addEventListener("blur", handlePointerLeaveViewport);
 
     cleanups.push(() => window.removeEventListener("resize", setCanvasSize));
     cleanups.push(() => window.removeEventListener("pointermove", handlePointerMove));
     cleanups.push(() => window.removeEventListener("pointerdown", handlePointerDown));
+    cleanups.push(() => window.removeEventListener("mouseout", handleMouseOut));
     cleanups.push(() => window.removeEventListener("blur", handlePointerLeaveViewport));
 
     frame = window.requestAnimationFrame(tick);

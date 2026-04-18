@@ -55,6 +55,7 @@ const Contact = () => {
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="group"
+                data-cursor="Click"
               >
                 <Card className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:gradient-bg group-hover:text-primary-foreground transition-smooth">

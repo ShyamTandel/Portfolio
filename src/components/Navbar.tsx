@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <header className={cn("fixed top-0 inset-x-0 z-50 transition-smooth", scrolled ? "glass shadow-card" : "bg-transparent")}>
       <nav className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#home" className="font-mono font-bold text-lg gradient-text">
+        <a href="#home" className="font-mono font-bold text-lg gradient-text" data-cursor="Click" data-magnetic data-magnetic-strength="0.14">
           &lt;Shyam Tandel/&gt;
         </a>
 
@@ -36,6 +36,9 @@ const Navbar = () => {
               key={l.href}
               href={l.href}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-smooth relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              data-cursor="Click"
+              data-magnetic
+              data-magnetic-strength="0.12"
             >
               {l.label}
             </a>
@@ -67,6 +70,7 @@ const Navbar = () => {
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                data-cursor="Click"
               >
                 {l.label}
               </a>

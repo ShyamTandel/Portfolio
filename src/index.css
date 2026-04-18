@@ -92,6 +92,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
@@ -131,5 +132,177 @@
 
   .glass {
     @apply backdrop-blur-xl bg-background/60 border border-border/40;
+  }
+}
+
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor select,
+  html.has-custom-cursor summary {
+    cursor: none !important;
+  }
+}
+
+.cursor-system {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  will-change: opacity;
+}
+
+.cursor-liquid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.66;
+  mix-blend-mode: screen;
+}
+
+.cursor-light {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, hsl(var(--accent) / 0.12) 32%, transparent 72%);
+  filter: blur(28px);
+  opacity: 0.24;
+  will-change: transform, opacity;
+}
+
+.cursor-preview {
+  position: absolute;
+  width: min(18rem, 28vw);
+  aspect-ratio: 4 / 3;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, hsl(var(--background) / 0.84), hsl(var(--background) / 0.35));
+  border: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: 0 28px 90px -32px hsl(var(--foreground) / 0.55);
+  backdrop-filter: blur(22px);
+  overflow: hidden;
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+}
+
+.cursor-preview::after {
+  content: "";
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, transparent 72%);
+  filter: blur(14px);
+}
+
+.cursor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.1rem;
+  display: block;
+}
+
+.cursor-aura,
+.cursor-core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  will-change: transform, opacity;
+}
+
+.cursor-aura {
+  width: 3.8rem;
+  height: 3.8rem;
+  border: 1px solid hsl(var(--foreground) / 0.18);
+  background: linear-gradient(135deg, hsl(var(--background) / 0.12), hsl(var(--background) / 0.02));
+  backdrop-filter: blur(16px);
+}
+
+.cursor-core {
+  width: 1.1rem;
+  height: 1.1rem;
+  background: white;
+  color: hsl(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 0 1px hsl(var(--foreground) / 0.08);
+}
+
+.cursor-label {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  mix-blend-mode: difference;
+}
+
+.cursor-trail-dot,
+.cursor-image-trail,
+.cursor-click-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 999px;
+  will-change: transform, opacity;
+}
+
+.cursor-trail-dot {
+  background: radial-gradient(circle, hsl(var(--primary) / 0.28) 0%, hsl(var(--accent) / 0.08) 58%, transparent 72%);
+  border: 1px solid hsl(var(--foreground) / 0.08);
+}
+
+.cursor-image-trail {
+  width: clamp(4rem, 7vw, 6.5rem);
+  aspect-ratio: 4 / 3;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid hsl(var(--border) / 0.4);
+  box-shadow: 0 18px 48px -24px hsl(var(--foreground) / 0.6);
+  overflow: hidden;
+}
+
+.cursor-click-ripple {
+  width: 3.8rem;
+  height: 3.8rem;
+  border: 1px solid hsl(var(--foreground) / 0.16);
+  background: radial-gradient(circle, hsl(var(--primary) / 0.2) 0%, transparent 72%);
+  backdrop-filter: blur(6px);
+}
+
+.project-card {
+  transform-origin: center;
+  will-change: transform, box-shadow;
+}
+
+.project-card__glow {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .project-card__glow {
+  transform: scale(1.16);
+  filter: blur(60px);
+  opacity: 0.88;
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .cursor-system {
+    display: none;
   }
 }
