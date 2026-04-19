@@ -44,10 +44,10 @@ const Skills = () => {
             </p>
           </ScrollReveal>
 
-          <ScrollRevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ScrollRevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
             {skillGroups.map((group) => (
-              <ScrollReveal key={group.title}>
-                <Card className="card-gradient p-6 border-border/60 hover:border-primary/50 hover:shadow-elegant hover:-translate-y-1 transition-smooth group">
+              <ScrollReveal key={group.title} className="h-full">
+                <Card className="card-gradient h-full p-6 border-border/60 hover:border-primary/50 hover:shadow-elegant hover:-translate-y-1 transition-smooth group flex flex-col">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="p-2.5 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
                       <group.icon className="h-5 w-5" />

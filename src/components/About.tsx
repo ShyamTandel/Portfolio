@@ -41,9 +41,9 @@ const About = () => {
 
             <ScrollRevealGroup className="md:col-span-2 grid grid-cols-2 gap-4">
               {highlights.map((h) => (
-                <ScrollReveal key={h.label}>
+                <ScrollReveal key={h.label} className="h-full">
                   <Card
-                    className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth"
+                    className="card-gradient h-full p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth"
                   >
                     <h.icon className="h-7 w-7 text-primary mb-3" />
                     <h3 className="font-semibold text-sm mb-1">{h.label}</h3>

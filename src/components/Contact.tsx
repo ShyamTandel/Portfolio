@@ -72,22 +72,6 @@ const Contact = () => {
               </ScrollReveal>
             ))}
           </ScrollRevealGroup>
-
-          <ScrollReveal className="text-center">
-            <Button
-              size="lg"
-              asChild
-              className="gradient-bg text-primary-foreground shadow-elegant hover:shadow-glow hover:scale-105 transition-smooth border-0"
-            >
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=shyamtandel.dev@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Mail className="mr-2 h-4 w-4" /> Send me an email
-              </a>
-            </Button>
-          </ScrollReveal>
         </ScrollRevealGroup>
       </div>
     </section>
