@@ -75,7 +75,7 @@ const Hero = () => {
                 <Mail className="mr-2 h-4 w-4" /> Contact Me
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="hover:scale-105 transition-smooth">
+            <Button size="lg" variant="ghost" asChild className="hover:scale-105 transition-smooth">
               <a href="/Shyam_Tandel_Resume.pdf" download>
                 <Download className="mr-2 h-4 w-4" /> Resume
               </a>

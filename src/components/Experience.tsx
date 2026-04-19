@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { ScrollReveal, ScrollRevealGroup } from "@/components/ui/scroll-reveal";
-import { Briefcase, Award } from "lucide-react";
+import { Briefcase, Award, ArrowUpRight } from "lucide-react";
 
 const Experience = () => {
   const bullets = [
@@ -58,31 +58,53 @@ const Experience = () => {
 
             <ScrollRevealGroup className="grid md:grid-cols-2 gap-4">
               <ScrollReveal>
-                <Card className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
-                      <Award className="h-5 w-5" />
+                <a
+                  href="https://www.credly.com/badges/4d40340f-c2ab-4c1f-bb85-a6cdb6484cf7/linked_in_profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  data-cursor="Click"
+                >
+                  <Card className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="p-2.5 rounded-lg bg-primary/10 text-primary">
+                          <Award className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold">AWS Certified AI Practitioner</h4>
+                          <p className="text-xs text-muted-foreground">Amazon Web Services</p>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-smooth" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold">AWS Certified AI Practitioner</h4>
-                      <p className="text-xs text-muted-foreground">Amazon Web Services</p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </a>
               </ScrollReveal>
 
               <ScrollReveal>
-                <Card className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-lg bg-accent/10 text-accent">
-                      <Award className="h-5 w-5" />
+                <a
+                  href="https://drive.google.com/file/d/1Yhsgr2__A2JKPPBKM3F_P8b5uAsp9uHI/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                  data-cursor="Click"
+                >
+                  <Card className="card-gradient p-5 border-border/60 hover:border-primary/50 hover:-translate-y-1 hover:shadow-elegant transition-smooth">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="p-2.5 rounded-lg bg-accent/10 text-accent">
+                          <Award className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold">Applied Cloud Computing</h4>
+                          <p className="text-xs text-muted-foreground">Microsoft</p>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-smooth" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold">Applied Cloud Computing for Software Development</h4>
-                      <p className="text-xs text-muted-foreground">Microsoft</p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </a>
               </ScrollReveal>
             </ScrollRevealGroup>
           </ScrollRevealGroup>
